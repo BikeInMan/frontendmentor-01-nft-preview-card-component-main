@@ -25,7 +25,7 @@ body {
     font-family: 'Outfit', sans-serif;
 }
 
-h2,
+h1,
 p {
     line-height: 1.5;
 }
@@ -58,7 +58,7 @@ main {
     border-radius: var(--main-img-radius);
 }
 
-.card h2 {
+.card h1 {
     font-size: 20px;
     color: var(--white);
 }
@@ -124,7 +124,7 @@ main {
 
 /* == #05. Active States == */
 
-.card h2:hover,
+.card h1:hover,
 .card-price p:hover,
 .card-creator strong:hover {
     color: var(--cyan);
