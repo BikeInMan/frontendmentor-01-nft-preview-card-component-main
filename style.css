@@ -1,0 +1,166 @@
+/* == #01.variables, defaults, typography ==*/
+
+:root {
+    /*very dark blue */
+    --body-bg: hsl(217, 54%, 11%);
+    /*very dark blue */
+    --card-bg: hsl(216, 50%, 16%);
+    /*text color*/
+    --white: hsl(0, 0%, 100%);
+    --p-size: 18px;
+    --p-color: hsl(215, 51%, 70%);
+    /*soft blue*/
+    --cyan: hsl(178, 100%, 50%);
+    /* rounded cornors */
+    --main-img-radius: 15px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+body {
+    background-color: var(--body-bg);
+    font-family: 'Outfit', sans-serif;
+}
+
+h2,
+p {
+    line-height: 1.5;
+}
+
+
+/* == #02.Card main  == */
+
+main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    /* width: 325px; */
+    min-width: 325px;
+    max-width: 350px;
+    /* min-width: 275px; */
+    /* to space out evenly along column axis */
+    display: grid;
+    row-gap: 1rem;
+    background-color: var(--card-bg);
+    padding: 1.5em;
+    border-radius: 1em;
+}
+
+.card-main-img {
+    width: 100%;
+    border-radius: var(--main-img-radius);
+}
+
+.card h2 {
+    font-size: 20px;
+    color: var(--white);
+}
+
+.card p {
+    color: var(--p-color);
+    font-size: var(--p-size);
+}
+
+
+/* == #03.Price and days left == */
+
+.card-cta {
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+    border-bottom: 1px solid var(--p-color);
+}
+
+.card-cta img {
+    padding-right: 5px;
+}
+
+.card-cta p {
+    font-size: calc(var(--p-size) - 2px);
+}
+
+.card-cta p:first-of-type {
+    color: var(--cyan);
+}
+
+
+/* pushes clock and following text to right */
+
+.push-right {
+    margin-left: auto;
+}
+
+
+/* == #04. creator info == */
+
+.card-creator {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.card-creator img {
+    width: 15%;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
+
+.card-creator p {
+    font-size: var(--p-size);
+}
+
+.card-creator strong {
+    color: var(--white);
+    font-weight: 400;
+}
+
+
+/* == #05. Active States == */
+
+.card h2:hover,
+.card-price p:hover,
+.card-creator strong:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+
+/* == 5. view icon overlay */
+
+.img-container {
+    position: relative;
+    width: 100%;
+    /*if 100%, overlay slightly stretches at the bottom. Why? */
+    height: 99%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: var(--cyan);
+    border-radius: var(--main-img-radius);
+}
+
+.overlay img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img-container:hover .overlay {
+    opacity: 0.6;
+    cursor: pointer;
+}
