@@ -58,9 +58,15 @@ main {
     border-radius: var(--main-img-radius);
 }
 
+.card a {
+    color: var(--white);
+    text-decoration: none;
+}
+
 .card h1 {
     font-size: 20px;
     color: var(--white);
+    inline-size: fit-content;
 }
 
 .card p {
@@ -116,17 +122,12 @@ main {
     font-size: var(--p-size);
 }
 
-.card-creator strong {
-    color: var(--white);
-    font-weight: 400;
-}
-
 
 /* == #05. Active States == */
 
 .card h1:hover,
 .card-price p:hover,
-.card-creator strong:hover {
+.card-creator a:hover {
     color: var(--cyan);
     cursor: pointer;
 }
@@ -149,7 +150,7 @@ main {
     right: 0;
     opacity: 0;
     transition: .3s ease;
-    background-color: var(--cyan);
+    background-color: hsla(178, 100%, 50%, 0.55);
     border-radius: var(--main-img-radius);
 }
 
@@ -161,6 +162,6 @@ main {
 }
 
 .img-container:hover .overlay {
-    opacity: 0.6;
+    opacity: 1.0;
     cursor: pointer;
 }
